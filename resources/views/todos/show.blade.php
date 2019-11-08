@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Todos</title>
+    <title>Todo Item</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -14,26 +14,19 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="text-center my-5">TODOS LIST</h1>
-      <div class="row justify-content-center">        
-        <div class="col-md-8">
+      <h1 class="text-center my-5">{{ $todo->name }}</h1>
+      <div class="row justify-content-center"> 
+        <div class="col-md-8">      
           <div class="card card-default">
-              <div class="card-header">
-                Todos
-              </div>
-              <div class="card-body">
-                <ul class="list-group">    
-                @foreach($todos as $todo)
-                  <li class="list-group-item">
-                    {{ $todo->name }}
-                  <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm float-right">View</a>
-                  </li>
-                @endforeach
-                </ul>
-              </div>      
+            <div class="card-header">
+                Details
+            </div>        
+            <div class="card-body">
+              {{ $todo->description }}
             </div>
-        </div>
-      </div>      
-    </div>
+          </div>
+        </div> 
+      </div><!-- row -->  
+    </div><!-- container -->
   </body>
 </html>
